@@ -14,6 +14,7 @@ source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas
+source.include_exts_add = txt,ttf,woff,otf
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -37,7 +38,37 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy
+requirements = python==3.8,kivy==2.1.0,kivymd==0.104.1
+
+# (list) Application build permissions
+android.permissions = INTERNET,WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE
+
+# (list) Android Gradle dependencies
+android.gradle_dependencies = com.android.support:support-core-utils:28.0.0
+
+# (list) List of Java .jar files to add to the libs
+android.add_jars = jars/android-support-v4.jar,jars/picasso-2.8.jar,jars/gson-2.8.6.jar
+
+# (list) List of Java .jar files to add to the classes
+android.add_libs_armeabi_v7a = libs/armeabi-v7a/libpymodules.so
+android.add_libs_arm64_v8a = libs/arm64-v8a/libpymodules.so
+android.add_libs_x86 = libs/x86/libpymodules.so
+android.add_libs_x86_64 = libs/x86_64/libpymodules.so
+
+# (list) List of Java files to add to the android project
+android.add_src = src/android/*.java
+
+# (list) Android Gradle dependencies
+android.gradle_dependencies = com.android.support:support-core-utils:28.0.0
+
+# (list) Android build dependencies
+android.build_depends = plyer
+
+# (list) Android build gradle dependencies
+android.gradle_dependencies = com.android.support:support-core-utils:28.0.0
+
+# (list) Android build tools dependencies
+android.build_tools_dependencies = com.android.support:support-core-utils:28.0.0
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -64,7 +95,7 @@ orientation = portrait
 # author = © Copyright Info
 
 # change the major version of python used by the app
-osx.python_version = 3
+osx.python_version = 3.7.6
 
 # Kivy version to use
 osx.kivy_version = 1.9.1
